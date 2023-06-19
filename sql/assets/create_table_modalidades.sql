@@ -6,6 +6,7 @@ CREATE TABLE modalidades (
     descricao TEXT);
 INSERT INTO modalidades (modalidade, dominio, subdominio, descricao)
 VALUES 
+(203, '02', '03', 'credito_pessoal'),
 (202, '02', '02', 'consignado'),
 (101, '01', '01', 'cheque_especial'),
 (213, '02', '13', 'cheque_especial'),

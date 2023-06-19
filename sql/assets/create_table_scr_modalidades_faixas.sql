@@ -9,6 +9,14 @@ create table scr_modalidades_faixas as SELECT chave_cpf
 ,SUM(valor_credito_vencido_31_60_dia) AS valor_credito_vencido_31_60_dia
 ,SUM(valor_credito_vencido_61_90_dia) AS valor_credito_vencido_61_90_dia
 ,SUM(valor_credito_vencido_acima_90_dia) AS valor_credito_vencido_acima_90_dia
+,SUM(CASE WHEN descricao = 'credito_pessoal' THEN valor_credito_vencer_ate_30_dia ELSE 0 END) AS credito_pessoal_valor_credito_vencer_ate_30_dia
+,SUM(CASE WHEN descricao = 'credito_pessoal' THEN valor_credito_vencer_31_60_dia ELSE 0 END) AS credito_pessoal_valor_credito_vencer_31_60_dia
+,SUM(CASE WHEN descricao = 'credito_pessoal' THEN valor_credito_vencer_61_90_dia ELSE 0 END) AS credito_pessoal_valor_credito_vencer_61_90_dia
+,SUM(CASE WHEN descricao = 'credito_pessoal' THEN valor_credito_vencer_acima_90_dia ELSE 0 END) AS credito_pessoal_valor_credito_vencer_acima_90_dia
+,SUM(CASE WHEN descricao = 'credito_pessoal' THEN valor_credito_vencido_15_30_dia ELSE 0 END) AS credito_pessoal_valor_credito_vencido_15_30_dia
+,SUM(CASE WHEN descricao = 'credito_pessoal' THEN valor_credito_vencido_31_60_dia ELSE 0 END) AS credito_pessoal_valor_credito_vencido_31_60_dia
+,SUM(CASE WHEN descricao = 'credito_pessoal' THEN valor_credito_vencido_61_90_dia ELSE 0 END) AS credito_pessoal_valor_credito_vencido_61_90_dia
+,SUM(CASE WHEN descricao = 'credito_pessoal' THEN valor_credito_vencido_acima_90_dia ELSE 0 END) AS credito_pessoal_valor_credito_vencido_acima_90_dia
 ,SUM(CASE WHEN descricao = 'consignado' THEN valor_credito_vencer_ate_30_dia ELSE 0 END) AS consignado_valor_credito_vencer_ate_30_dia
 ,SUM(CASE WHEN descricao = 'consignado' THEN valor_credito_vencer_31_60_dia ELSE 0 END) AS consignado_valor_credito_vencer_31_60_dia
 ,SUM(CASE WHEN descricao = 'consignado' THEN valor_credito_vencer_61_90_dia ELSE 0 END) AS consignado_valor_credito_vencer_61_90_dia
